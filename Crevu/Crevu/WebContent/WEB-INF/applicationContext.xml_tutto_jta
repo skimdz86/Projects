@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/config/application-env.properties"/>
+        <!-- oppure dal classpath, cosi <property name="location" value="classpath:jdbc.properties"/> -->
+    </bean>
+    
+   <bean class="org.springframework.jndi.JndiObjectFactoryBean" id="crevu_ds">
+   		<property name="jndiName" value="java:jboss/datasources/crevu_ds"/>
+   </bean>
+
+<!-- Activates annotation-based bean configuration -->
+<!-- 	<context:annotation-config/> -->
+	<!-- needed is for @Configurable -->
+	<context:component-scan base-package="it.crevu.db" 
+	annotation-config="true" />
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+   	<tx:jta-transaction-manager />  
+    
+    <!-- enables @PersistenceUnit/@PersistenceContext annotations -->    
+<!--     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>     -->
+    
+    <!-- use persistence.xml for JPA configuration -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="crevu_ds"></property>
+		<!-- needed for multiple persistence units -->
+		<property name="jpaVendorAdapter">
+	        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	            <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+	            <property name="showSql" value="${jdbc.showSql}"/>
+	            <property name="database" value="MYSQL"></property>
+            	<property name="generateDdl" value="false"/>
+	        </bean>
+	    </property> 
+	    <property name="jpaPropertyMap">
+		      <map>
+			<entry key="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+			<entry key="hibernate.transaction.flush_before_completion" value="true"/>
+			<entry key="hibernate.transaction.auto_close_session" value="true"/>
+			<entry key="hibernate.current_session_context_class" value="jta"/>
+			<entry key="hibernate.connection.release_mode" value="auto"/>
+		      </map>
+		   </property>
+		   <property name="persistenceUnitPostProcessors">
+		      <list>
+		         <bean class="JtaPersistenceUnitPostProcessor">
+		            <property name="jtaMode" value="true"></property>
+		            <property name="jtaDataSource" ref="crevu_ds"></property>
+		         </bean>
+		      </list>
+		   </property>
+	</bean>
+	 
+	<!-- enables JPA transaction manager -->
+<!-- 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> -->
+<!-- 		<property name="entityManagerFactory" ref="entityManagerFactory" /> -->
+<!-- 	</bean> -->
+    
+    <bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+	   <property name="transactionManagerName" value="java:/TransactionManager"></property>
+	   <property name="autodetectUserTransaction" value="false"></property>
+	</bean>
+    
+    <!-- 
+    <bean class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        id="transactionManager" p:sessionFactory-ref="crevuSessionFactory"/>
+     -->
+    
+	<!-- Beans di Crevu-->
+	
+	<bean id="beanTest" class="it.crevu.spring.beans.BeanTest">
+		<property name="message" value="test"/>
+	</bean>
+	 
+	<bean id="WelcomeUserDAO" class="it.crevu.db.WelcomeUserHome">
+	</bean>
+
+<!-- 		<property name="SessionFactory" value="crevuSessionFactory"/> -->
+	 
+</beans>

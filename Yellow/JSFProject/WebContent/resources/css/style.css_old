@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+.bold{font-weight: bold;}
+.bigBold{font-weight: bold;font-size:120%}
+.leftColumn{}
+
+.rightColumn{}
+
+/*#flightPanel td {max-width:250px;word-wrap: break-word;}
+#hotelPanel td {max-width:250px;word-wrap: break-word;}
+#eventPanel td {max-width:250px;word-wrap: break-word;}
+*/
+.flightPanel{float:left;width:410px;border-right:1px solid black;}
+.hotelPanel{float:left;width:400px;border-right:1px solid black;}
+.eventPanel{float:left;width:400px;}
+
+.flightPanel1{float:left;width: 33%;}
+.flightPanel2{float:left;width: 33%;}
+.flightPanel3{float:left;width: 34%;}
+
+.hotelPanelSingle{clear:both;border-bottom: 1px solid black;border-top: 1px solid black;padding-bottom:30px;}
+.eventPanelSingle{clear:both;border-bottom: 1px solid black;padding-bottom:30px;}
+
+.errorMessage{border-style:solid;border-color:red;border-width:medium;color:red;-moz-border-radius:5px;padding:3px;}

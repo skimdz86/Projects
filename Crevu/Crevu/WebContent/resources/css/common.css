@@ -1,0 +1,33 @@
+
+.ch-grid {
+	list-style: none;
+	display: block;
+        margin:auto;
+        text-align: center;
+        height: auto;
+}
+
+.ch-grid:after,
+.ch-item:before {
+	content: '';
+    display: table;
+    
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+	width: 180px;
+	height: 180px;
+	display: inline-block;
+	padding: 10px;
+        margin: auto;
+}
+
+.box-3{
+    width:320px;
+    float:left;
+    margin:auto;
+}

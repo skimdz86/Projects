@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>test</title>
+</h:head>
+<h:body>
+<h:form id="test_form" name="test_form">
+	    	<div>
+	    		<div style="font-size:200%">
+		    		<b><h:outputText value="Pavone Project Name"></h:outputText></b>
+		    		<h:inputText id="name" value="#{massyController.name}"></h:inputText>
+		    	</div>
+	    		<div style="font-size:200%">
+		    		<b><h:outputText value="Pavone Project Surname"></h:outputText></b>
+		    		<h:inputText id="surname" value="#{massyController.surname}"></h:inputText>
+		    	</div>
+		    	<div>
+		    		<h:commandButton value="save" action="#{massyController.action}"></h:commandButton>
+		    	</div>
+		    </div>	
+</h:form>
+ <div style="font-size:200%">
+  		<h:panelGroup id="complete_name"><b><h:outputText value="#{massyController.complete_name}"></h:outputText></b></h:panelGroup>
+ </div>
+</h:body>
+</html>

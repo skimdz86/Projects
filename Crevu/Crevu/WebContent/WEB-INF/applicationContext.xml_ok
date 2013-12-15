@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/config/application-env.properties"/>
+        <!-- oppure dal classpath, cosi <property name="location" value="classpath:jdbc.properties"/> -->
+    </bean>
+    
+   <bean class="org.springframework.jndi.JndiObjectFactoryBean" id="crevu_ds">
+   		<property name="jndiName" value="java:jboss/datasources/crevu_ds"/>
+   </bean>
+   
+<!-- serve?? ->forse rimpiazzare qquello sotto che è solo jpa -->
+<!-- 	<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" -->
+
+	<bean
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		id="crevuSessionFactory" name="crevuSessionFactory">
+		<property name="mappingResources">
+            <list>
+                <value>it/crevu/db/WelcomeUser.hbm.xml</value>
+            </list>
+        </property>  
+        <property name="hibernateProperties">
+            <props>
+               <prop key="hibernate.connection.datasource">java:jboss/datasources/crevu_ds</prop>
+	           <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+	           <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+	           <prop key="hibernate.show_sql">${jdbc.showSql}</prop>
+	           <prop key="hibernate.hbm2ddl.auto">update</prop>
+	           <prop key="hibernate.session_factory_name">crevuSessionFactory</prop>
+<!-- 	           <prop key="hibernate.session_factory_name_is_jndi">true</prop> -->
+	        </props>
+        </property>
+        <property name="dataSource"><ref bean="crevu_ds"></ref></property>
+	</bean>
+
+
+	<!-- Beans di Crevu-->
+	
+	<bean id="beanTest" class="it.crevu.spring.beans.BeanTest">
+		<property name="message" value="test"/>
+	</bean>
+	<!-- 
+	<bean id="WelcomeUserDAO" class="it.crevu.db.WelcomeUserHome">
+		<property name="SessionFactory" value="jndi/crevuSessionFactory"/>
+	</bean>
+	 -->
+</beans>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="content">
+	    <h:form id="form1">
+	    	<div>
+	    		<div style="font-size:200%">
+		    		<b><h:outputText value="Yellow Project"></h:outputText></b>
+		    	</div>
+		    	<div>
+			    	<div style="margin-top:10px">
+			    		<h:outputLink value="pages/testPageHotel.jsf"><h:outputText value="Search for Hotels"></h:outputText></h:outputLink>
+			    	</div>
+			    	<div style="margin-top:10px">
+			    		<h:outputLink value="pages/testPageEvent.jsf"><h:outputText value="Search for Events"></h:outputText></h:outputLink>
+			    	</div>
+			    	<div style="margin-top:10px">
+			    		<h:outputLink value="pages/testPageFlight.jsf"><h:outputText value="Search for Flights"></h:outputText></h:outputLink>
+			    	</div>
+			    	<div style="margin-top:10px">
+			    		<h:outputLink value="pages/testOneSearch.jsf"><h:outputText value="Search for all-in-one trips"></h:outputText></h:outputLink>
+			    	</div>
+			    </div>
+		    </div>	
+	    </h:form>
+	   
+	</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="header">
+		<h:outputStylesheet library="css" name="style.css"/>
+		<script type="text/javascript">
+			function start() {  
+				pbClient.setValue(0);
+				clearInterval(window['progress']);
+	        	window['progress'] = setInterval(function() {  
+		        	
+		        	var oldValue = pbClient.getValue(),  
+		        	newValue = oldValue + 10;  
+		  
+		            if(newValue &lt; 100){
+		            	pbClient.setValue(pbClient.getValue() + 10);  
+		            }
+		  
+		  
+		        }, 1000);  
+		    }  
+		  
+		    function cancel() {
+		    	pbClient.setValue(100);
+		        clearInterval(window['progress']);  
+		          
+		          
+		    }  
+		</script>
+	</ui:define>
+	
+	<ui:define name="content">
+		<f:loadBundle basename="it.yellow.fe.resources.airport" var="airportBundle"/>
+		<f:loadBundle basename="it.yellow.fe.resources.airline" var="airlineBundle"/>
+	    <h:form id="form1">
+	    	<div id="input">
+		    	<h:panelGrid columns="2">
+		    		<h:outputText value="1st departure airport"></h:outputText>
+		    		<p:autoComplete id ="inputFrom" value="#{testProviderController.from}" minQueryLength="3"
+		    			maxResults="5" completeMethod="#{testProviderController.completeAirport}" />
+		    		<h:outputText value="Number of people"></h:outputText>
+		    		<p:selectOneMenu value="#{testProviderController.numberPeople}">
+		    			<f:selectItem itemLabel="1" itemValue="1" selected="true"/>
+		    			<f:selectItem itemLabel="2" itemValue="2"/>
+		    			<f:selectItem itemLabel="3" itemValue="3"/>
+		    			<f:selectItem itemLabel="4" itemValue="4"/>
+		    			<f:selectItem itemLabel="5" itemValue="5"/>
+		    		</p:selectOneMenu>
+		    		<h:outputText value="2nd departure airport (optional)"></h:outputText>
+		    		<p:autoComplete id ="inputFrom2" value="#{testProviderController.from2}" minQueryLength="3"
+		    			maxResults="5" completeMethod="#{testProviderController.completeAirport}" />
+		    		<h:outputText value="Number of people (optional)"></h:outputText>
+		    		<p:selectOneMenu value="#{testProviderController.numberPeople2}">
+		    			<f:selectItem itemLabel="" itemValue="" selected="true"/>
+		    			<f:selectItem itemLabel="1" itemValue="1"/>
+		    			<f:selectItem itemLabel="2" itemValue="2"/>
+		    			<f:selectItem itemLabel="3" itemValue="3"/>
+		    			<f:selectItem itemLabel="4" itemValue="4"/>
+		    			<f:selectItem itemLabel="5" itemValue="5"/>
+		    		</p:selectOneMenu>
+		    		<h:outputText value="3rd departure airport (optional)"></h:outputText>
+		    		<p:autoComplete id ="inputFrom3" value="#{testProviderController.from3}" minQueryLength="3"
+		    			maxResults="5" completeMethod="#{testProviderController.completeAirport}" />		
+		    		<h:outputText value="Number of people (optional)"></h:outputText>
+		    		<p:selectOneMenu value="#{testProviderController.numberPeople3}">
+		    			<f:selectItem itemLabel="" itemValue="" selected="true"/>
+		    			<f:selectItem itemLabel="1" itemValue="1"/>
+		    			<f:selectItem itemLabel="2" itemValue="2"/>
+		    			<f:selectItem itemLabel="3" itemValue="3"/>
+		    			<f:selectItem itemLabel="4" itemValue="4"/>
+		    			<f:selectItem itemLabel="5" itemValue="5"/>
+		    		</p:selectOneMenu>
+		    		<h:outputText value="To"></h:outputText>
+		    		<p:autoComplete id ="inputTo" value="#{testProviderController.to}" minQueryLength="3"
+		    			maxResults="5" completeMethod="#{testProviderController.completeAirport}" />
+		    		<h:outputText value="Departure date"></h:outputText>
+		    		<p:calendar value="#{testProviderController.flightDepDate}" id="popupCalSarchFrom" maxlength="10" pattern="dd/MM/yyyy" mindate="#{testProviderController.currDate}" navigator="true">
+						<p:ajax event="dateSelect" listener="#{testProviderController.limitDates}" update="popupCalSearchTo"/>
+					</p:calendar>
+		    		<h:outputText value="Return date"></h:outputText>
+		    		<p:calendar value="#{testProviderController.flightReturnDate}" id="popupCalSearchTo" maxlength="10" pattern="dd/MM/yyyy" mindate="#{testProviderController.dateLimit}" navigator="true"/>
+		    		
+		    		<h:outputText value="What do you want to do? (event, optional)"></h:outputText>
+		    		<p:inputText value="#{testProviderController.what}"></p:inputText>
+		    		<h:outputText value="Free events?"></h:outputText>
+		    		<p:selectOneMenu value="#{testProviderController.eventWithoutTix}">
+		    			<f:selectItem itemLabel="Yes" itemValue="true"/>
+		    			<f:selectItem itemLabel="No" itemValue="false"/>
+		    		</p:selectOneMenu>
+		    		<p:commandButton action="#{testProviderController.doSubmitAllInOne}" update="results" value="Submit" onclick="start()" oncomplete="cancel()"></p:commandButton>
+		    		<p:progressBar id="bar1" widgetVar="pbClient" style="width:100%;"/>
+		    	</h:panelGrid>	
+	    	</div>
+	    	<div id="output">
+	    	   	<h:panelGroup id="results">
+				  <h:panelGroup rendered="#{not testProviderController.firstPageVisit}">
+					<div id="flightPanel1" class="flightPanel1">		   	
+				   		<h:panelGroup rendered="#{not empty testProviderController.flights}">
+					   		<span class="title"><h:outputText value="FLIGHTS FROM 1st LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <ui:repeat value="#{testProviderController.flights}" var="flight">
+						   		<h:panelGroup rendered="#{flight.international}">
+						   			<div class="blocco"><div>
+						   				<h:outputText styleClass="bigBold" value="Total price: "></h:outputText><h:outputText value="#{flight.pricing.totalFare}"></h:outputText>&nbsp;EUR
+						   			</div>
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment">
+						   				<h:column>
+						   					<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="nomedato" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="nomedato" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+						   				</h:column>
+						   			</h:dataTable>
+						   			</div>
+						   		</h:panelGroup>
+						   		<h:panelGroup columns="2" rendered="#{not flight.international}">
+						   			<div class="blocco">
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText styleClass="bold" value="Onward price: "></h:outputText><h:outputText value="#{flight.pricingOnward.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="nomedato" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText value="Return price: "></h:outputText><h:outputText value="#{flight.pricingReturn.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="nomedato" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="nomedato" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+						   				</h:column>
+						   			</h:dataTable>
+						   			</div>   		
+						   		</h:panelGroup>
+					    	</ui:repeat>
+					    </h:panelGroup>
+					    <h:panelGroup rendered="#{empty testProviderController.flights}">
+							<span class="title"><h:outputText value="FLIGHTS FROM 1st LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <h:panelGroup styleClass="errorMessage">
+						    	<h:outputText value="No results found"></h:outputText>
+						    </h:panelGroup>
+					    </h:panelGroup>
+				    </div>
+				    
+				    <div id="flightPanel2" class="flightPanel2">		   	
+				   		<h:panelGroup rendered="#{not empty testProviderController.flights2}">
+					   		<span class="title"><h:outputText value="FLIGHTS FROM 2nd LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <ui:repeat value="#{testProviderController.flights2}" var="flight">
+						   		<h:panelGroup rendered="#{flight.international}">
+						   			<div class="blocco">
+						   			<div>
+						   				<h:outputText styleClass="bigBold" value="Total price: "></h:outputText><h:outputText value="#{flight.pricing.totalFare}"></h:outputText>&nbsp;EUR
+						   			</div>
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+						   					<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			</div>
+						   		</h:panelGroup>
+						   		<h:panelGroup columns="2" rendered="#{not flight.international}">
+						   			<div class="blocco">
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText styleClass="bold" value="Onward price: "></h:outputText><h:outputText value="#{flight.pricingOnward.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText value="Return price: "></h:outputText><h:outputText value="#{flight.pricingReturn.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			</div>   		
+						   		</h:panelGroup>						   		
+					    	</ui:repeat>
+					    </h:panelGroup>
+					    <h:panelGroup rendered="#{empty testProviderController.flights2}">
+							<span class="title"><h:outputText value="FLIGHTS FROM 2nd LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <h:panelGroup styleClass="errorMessage">
+						    	<h:outputText value="No results found"></h:outputText>
+						    </h:panelGroup>
+					    </h:panelGroup>
+				    </div>
+				    
+				    <div id="flightPanel3" class="flightPanel3">		   	
+				   		<h:panelGroup rendered="#{not empty testProviderController.flights3}">
+					   		<span class="title"><h:outputText value="FLIGHTS FROM 3rd LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <ui:repeat value="#{testProviderController.flights3}" var="flight">
+						   		<h:panelGroup rendered="#{flight.international}">
+						   			<div class="blocco">
+						   			<div>
+						   				<h:outputText styleClass="bigBold" value="Total price: "></h:outputText><h:outputText value="#{flight.pricing.totalFare}"></h:outputText>&nbsp;EUR
+						   			</div>
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+						   					<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			</div>
+						   		</h:panelGroup>
+						   		<h:panelGroup columns="2" rendered="#{not flight.international}">
+						   			<div class="blocco">
+						   			<div><h:outputText styleClass="bigBold" value="Onward flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText styleClass="bold" value="Onward price: "></h:outputText><h:outputText value="#{flight.pricingOnward.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.onwardSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>
+						   			<div><h:outputText styleClass="bigBold" value="Return flight"></h:outputText><h:outputText></h:outputText></div>
+						   			<div><h:outputText value="Return price: "></h:outputText><h:outputText value="#{flight.pricingReturn.totalFare}"></h:outputText>&nbsp;EUR</div>
+						   			<h:dataTable value="#{flight.returnSegments}" var="segment" style="margin-left:20px;">
+						   				<h:column>
+							   				<c:set var = "depAir" value="#{segment.departureAirport}"/>
+							   				<c:set var = "arrAir" value="#{segment.arrivalAirport}"/>
+							   				<c:set var = "airlineDecoded" value="#{segment.airline}"/>
+							   				<div><h:outputText styleClass="bold" value="Departure airport: "></h:outputText><h:outputText value="#{airportBundle[depAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival airport: "></h:outputText><h:outputText value="#{airportBundle[arrAir]}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Departure date: "></h:outputText><h:outputText value="#{segment.departureDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Arrival date: "></h:outputText><h:outputText value="#{segment.arrivalDateTime}"></h:outputText></div>
+							   				<div><h:outputText styleClass="bold" value="Airline: "></h:outputText><h:outputText value="#{airlineBundle[airlineDecoded]}"></h:outputText></div>
+							   				<br/><br/>
+						   				</h:column>
+						   			</h:dataTable>   	
+						   			</div>	
+						   		</h:panelGroup>						   		
+					    	</ui:repeat>
+					    </h:panelGroup>
+					    <h:panelGroup rendered="#{empty testProviderController.flights3}">
+							<span class="title"><h:outputText value="FLIGHTS FROM 3rd LOCATION:"></h:outputText><h:outputText></h:outputText></span>
+						    <h:panelGroup styleClass="errorMessage">
+						    	<h:outputText value="No results found"></h:outputText>
+						    </h:panelGroup>
+					    </h:panelGroup>
+				    </div>
+				    
+				    
+				    
+				    
+				    
+				    <div id="hotelPanel" class="hotelPanelSingle">
+				    	<h:panelGroup rendered="#{not empty testProviderController.hotels}">
+					   		<span class="title"><h:outputText value="FIRST HOTELS:"></h:outputText><h:outputText></h:outputText></span>
+						    <ui:repeat value="#{testProviderController.hotels}" var="hotel">
+						   		<h:panelGrid columns="2">
+						   		<h:outputText styleClass="nomedato" value="Name: "></h:outputText><h:outputText styleClass="bigBold" value="#{hotel.name}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Address: "></h:outputText><h:outputText value="#{hotel.address}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="City: "></h:outputText><h:outputText value="#{hotel.city}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Country: "></h:outputText><h:outputText value="#{hotel.country}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="PostalCode: "></h:outputText><h:outputText value="#{hotel.postalCode}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Rating: "></h:outputText><h:outputText value="#{hotel.hotelRating}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Location description: "></h:outputText><h:outputText value="#{hotel.locationDescription}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Hotel description: "></h:outputText><h:outputText value="#{hotel.shortDescription}"></h:outputText>
+						   		<h:outputText styleClass="nomedato" value="Image: "></h:outputText><h:graphicImage alt="image" value="#{hotel.imageUrl}"></h:graphicImage>
+						   		<ui:repeat value="#{hotel.rooms}" var="room">
+						   			<tr>
+						   				<td><b><h:outputText value="Room:"></h:outputText></b></td><td><h:outputText></h:outputText></td>
+						   			</tr>
+									<tr>
+						   				<td><h:outputText styleClass="nomedato" value="Description: "></h:outputText></td><td><h:outputText value="#{room.roomDescription}"></h:outputText></td>
+						   			</tr>
+									<tr>
+						   				<td><h:outputText styleClass="nomedato" value="Max occupants: "></h:outputText></td><td><h:outputText value="#{room.maxOccupants}"></h:outputText></td>
+						   			</tr>
+									<tr>
+						   				<td><h:outputText styleClass="nomedato" value="Total charge: "></h:outputText></td><td><h:outputText value="#{room.totalCharge}"></h:outputText></td>
+						   			</tr>
+						   			<tr>
+						   				<td><h:outputText styleClass="nomedato" value="Remaining rooms: "></h:outputText></td><td><h:outputText value="#{room.remainingRooms}"></h:outputText></td>
+						   			</tr>
+						   			<tr>
+						   				<td><h:outputText styleClass="nomedato" value="Booking url: "></h:outputText></td>
+						   				<td>
+						   					<h:panelGroup rendered="#{room.url!=null}">
+						   						<h:outputLink value="#{room.url != null ? room.url : ''}"><h:outputText value="Link"></h:outputText></h:outputLink>
+						   					</h:panelGroup>
+						   				</td>
+						   			</tr>			    
+						   		</ui:repeat>
+						   		</h:panelGrid>
+					    	</ui:repeat>
+					    </h:panelGroup>
+					    <h:panelGroup rendered="#{empty testProviderController.hotels}">
+							<span class="title"><h:outputText value="FIRST HOTELS:"></h:outputText><h:outputText></h:outputText></span>
+						    <h:panelGroup styleClass="errorMessage">
+						    	<h:outputText value="No hotels found"></h:outputText>
+						    </h:panelGroup>
+					    </h:panelGroup>
+				    </div>
+				    <div id="eventPanel" class="eventPanelSingle">
+				    	<h:panelGroup rendered="#{not empty testProviderController.events}">
+					    	<span class="title"><h:outputText value="FIRST EVENTS:"></h:outputText><h:outputText></h:outputText></span>
+						    <ui:repeat value="#{testProviderController.events}" var="event">
+						   		<h:panelGrid columns="2">
+						   		<h:outputText value="Event: "></h:outputText><h:outputText styleClass="bigBold" value="#{event.what}"></h:outputText>
+						   		<h:outputText value="Date: "></h:outputText><h:outputText value="#{event.date}"></h:outputText>
+						   		<h:outputText value="Time: "></h:outputText><h:outputText value="#{event.time}"></h:outputText>
+						   		<h:outputText value="Location: "></h:outputText><h:outputText value="#{event.where}"></h:outputText>
+						   		<h:outputText value="Town: "></h:outputText><h:outputText value="#{event.town}"></h:outputText>
+						   		<h:outputText value="Country: "></h:outputText><h:outputText value="#{event.country}"></h:outputText>
+						   		<h:outputText value="Ticket remaining: "></h:outputText><h:outputText value="#{event.ticketCount}"></h:outputText>
+						   		<h:outputText value="Min price: "></h:outputText><h:outputText value="#{event.minPrice} #{event.currency}"></h:outputText>
+						   		<h:outputText value="Image: "></h:outputText><h:graphicImage alt="image" value="#{event.imageUrl}"></h:graphicImage>
+						   		<h:outputText value="Booking url: "></h:outputText>
+						   		<h:outputLink value="#{event.url}"><h:outputText value="Link"></h:outputText></h:outputLink>
+						   		
+						   		</h:panelGrid>
+					    	</ui:repeat>
+					    </h:panelGroup>
+					    <h:panelGroup rendered="#{empty testProviderController.events}">
+					    	<span class="title"><h:outputText value="FIRST EVENTS:"></h:outputText><h:outputText></h:outputText></span>
+						    <h:panelGroup styleClass="errorMessage">
+						    	<h:outputText value="No events found"></h:outputText>
+						    </h:panelGroup>
+					    </h:panelGroup>
+				    </div>
+				  </h:panelGroup>  
+			    </h:panelGroup>
+		    </div>
+	    </h:form>
+	    
+	    
+	    
+	</ui:define>
+	
+</ui:composition>

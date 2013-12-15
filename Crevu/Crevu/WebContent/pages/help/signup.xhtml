@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="header">
+		
+		<link rel="stylesheet" type="text/css" href="/Crevu/resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/style_box.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/prettyPhoto.css" />
+        
+        <style type="text/css">
+        	.myRadioGroup span input[type="radio"]{
+        		float: left;
+        		margin-left: 0px;
+        		margin-top: 0px;
+        	}
+        	
+       		.myRadioGroup span{
+        		margin-top: 4px;
+        	}
+        	
+        	button span.ui-icon{
+        		text-indent: 0;
+        	}
+        	
+        	button span.ui-button-icon-left{
+        		margin-top: -11px !important;
+        	}
+        </style>
+        
+    </ui:define>
+
+	<ui:define name="content">
+	            <div class="container-fluid" style="width: 80%;margin:auto;">
+            <!-- start: Content -->
+<!--             <h:messages/> -->
+            <p:messages showDetail="false"/>
+            <div id="content">
+                <!--[if lte IE 9]>
+                <p style="font-size: 20px; padding: 50px;">Sorry, this only works in modern browsers...</p>
+                <![endif]-->
+                <!-- start: Main Menu -->
+
+                <!-- end: Main Menu -->
+                <div class="cn-container">
+                    <div class="cn-slide" id="slide-main">
+
+                        <h2 class="showcase" style="width: 100%;"><a href="showcase.html"><i class="fa-icon-arrow-left" style="margin-left: 0px;"></i></a>Signup</h2>
+                        <div class="left-div"><!-- SECONDO ME IL MENU QUA NON CI VA PROPRIO -->
+                            <div class="element" id="_side_menu_main"></div>
+                            <div id="_side_boxes"></div>
+                        </div>
+                        <div class="right-div">
+
+                            <div class="element" style="height: 100%;">
+                                <h:form name="user_info" id="user_info">
+                                    <div class="box-header">
+                                        <span class="fa-icon-signin" style="color:black;"></span><span class="break"></span>User Info
+                                    </div>       
+                                    <div id="img_user">
+                                        <div style="width:200px; height:200px; background-image:url('/Crevu/resources/images/user.jpg');background-repeat: no-repeat;background-size: cover;margin-top: 0px;" id="lowresDemo">
+<!-- NON ABBIAMO ANCORA PENSATO A GESTIRE L'IMMAGINE!! -->
+                                            <div class="uploader">
+<!--                                             	<input type="file" onchange="readURL(this)" name="img" /> -->
+                                            	<span style="-moz-user-select: none;" class="filename"></span>
+                                            	<span style="-moz-user-select: none;" class="action">Change Image</span>
+                                            </div>
+
+                                        </div> 
+                                    </div>
+                                    <div style="display: table">
+
+                                        <div class="usr_element">
+                                            <h:inputText name="firstName" value="#{signupController.user.firstName}" placeholder="Name"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputText name="lastName" value="#{signupController.user.lastName}" placeholder="Surname"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputText name="city" value="#{signupController.user.city}" placeholder="City"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputText name="username" value="#{signupController.user.username}" required="true" requiredMessage="Please enter your username" placeholder="Username"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputSecret name="password" value="#{signupController.user.password}" required="true" requiredMessage="Please enter your password" placeholder="Password"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputSecret name="cpassword" value="#{signupController.cfrPassword}" required="true" requiredMessage="Please re-enter your password" placeholder="Confirm Password" />
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputText name="email" value="#{signupController.user.email}" required="true" requiredMessage="Please enter your email" placeholder="Email"/>
+                                        </div>
+                                        <div class="usr_element">
+                                            <h:inputText name="dbirth" value="#{signupController.user.birthDate}" placeholder="Date of Birth">
+                                           		<f:convertDateTime pattern="yyyy-MM-dd"/>
+                                           	</h:inputText>
+                                        </div>
+                                        <div class="usr_element">
+                                        	<h:selectOneRadio value="#{signupController.user.gender}" layout="pageDirection" styleClass="myRadioGroup"
+                                        			 required="true" requiredMessage="Please enter your gender">
+													<f:selectItem itemValue="M" itemLabel="Male" />
+													<f:selectItem itemValue="F" itemLabel="Female" />
+											</h:selectOneRadio> 
+                                        </div>
+                                        <div class="usr_element">
+                                        <!-- 	<p:commandButton id="signupSubmit" ajax="false" actionListener="#{signupController.save}" 
+                                        		styleClass="btn btn-info" value="Save" icon="fa-icon-signin">
+                                        	</p:commandButton>
+                                        	 -->
+                                        	<h:commandButton id="signupSubmit2" action="#{signupController.save}" 
+                                        		styleClass="btn btn-info" value="Save" icon="fa-icon-signin"/>
+                                        </div>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Content -->
+            </div><!--/#content.span10-->
+        </div>
+	
+	</ui:define>
+	
+	<ui:define name="scripts">
+		<script type="text/javascript" src="/Crevu/resources/js/backstretch.js"></script>
+        <script type="text/javascript">
+            //fixed bg img
+            $(document).ready(function() { $.backstretch("/Crevu/resources/images/bg.jpg"); }); 
+        </script>
+        <!-- customized JavaScript-->
+<!--         <script type="text/javascript" src="/Crevu/resources/js/signup.js"></script> -->
+        <!-- end: JavaScript-->
+
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	</ui:define>
+	
+</ui:composition>

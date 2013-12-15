@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+    <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+	    <property name="connectionFactories">
+	        <list>
+	            <bean id="facebookConnectionFactory" class="org.springframework.social.facebook.connect.FacebookConnectionFactory">
+	                <constructor-arg value="${facebook.app.clientId}" />
+	                <constructor-arg value="${facebook.app.clientSecret}" />				
+	            </bean>
+	            <bean id="twitterConnectionFactory" class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
+			        <constructor-arg name="consumerKey" value="${twitter.app.consumerKey}"/>
+			        <constructor-arg name="consumerSecret" value="${twitter.app.consumerSecret}"/>
+			    </bean>
+	        </list>
+	    </property>
+	</bean> 
+
+</beans>

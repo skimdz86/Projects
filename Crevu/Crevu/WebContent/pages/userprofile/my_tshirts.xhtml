@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="header">
+		
+		<link rel="stylesheet" type="text/css" href="/Crevu/resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/style_box.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/prettyPhoto.css" />
+        
+    </ui:define>
+	
+	<ui:define name="content">
+        <!-- start: Menu -->
+        <div class="container-fluid" style="width: 80%;margin:auto;">
+            <!-- start: Content -->
+            <div id="content">
+                <!--[if lte IE 9]>
+                <p style="font-size: 20px; padding: 50px;">Sorry, this only works in modern browsers...</p>
+                <![endif]-->
+                <!-- start: Main Menu -->
+
+                <!-- end: Main Menu -->
+                <div class="cn-container">
+                    <div class="cn-slide" id="slide-main">
+                        <h2 class="showcase">T-Shirts</h2>
+
+                        <div class="left-div">
+                            <div class="element" id="_side_menu_main">
+                            	<ui:include src="/WEB-INF/views/side_menu_main.xhtml"></ui:include>
+                            </div>
+                            <div id="_side_boxes">
+                            	<ui:include src="/WEB-INF/views/side_menu_boxed.xhtml"></ui:include>
+                            </div>
+                        </div>
+                        <div class="right-div">
+                            
+                            <div id="_up_t-shirt"></div>
+
+                            <ui:repeat value="#{userController.myTshirts}" var="tshirt">
+                            	<div class="element">
+								    <div style="float:left;margin-right: 20px;">
+								        <span class="dropt" onmouseover="preview(this, '.title h4 a')">
+								            <div class="title" style="margin-top: 0px;">
+								                <h4><a href="t-shirt_details.html">#{tshirt.message}</a></h4>
+								            </div>
+								            <span style="width: 400px;height:300px;" id="_preview_t-shirt">
+								                        
+								            </span>       
+								        </span>
+								    </div>
+								    <div style="float:right;">        
+								        <span class="stars"> #{tshirt.likes} <i class="fa-icon-thumbs-up" style="color:black;" id="like"></i></span>
+								        <span class="stars"> #{tshirt.numBought} <i class="fa-icon-shopping-cart" style="color:black;" id="cart"></i></span>
+								    </div>
+								    <div style="width: 100%;display: table;text-align: center;padding:0;">
+								        <div class="usr_element">
+								            <span style="padding-left: 1px; width: 100%;margin-top:5px;">
+								                <i class="fa-icon-pinterest-sign" id="pininterest"></i>
+								                <i class="fa-icon-facebook-sign" id="facebook"></i>
+								                <i class="fa-icon-twitter-sign"></i>
+								                <i class="fa-icon-google-plus-sign"></i>
+								            </span>
+								        </div>
+								        <div class="usr_element" style="float:right;margin-right: 25px;">
+								            <a class="btn" style="width: 100%" href="create_event.html">Create An Event &nbsp;&nbsp;<i class="halflings-icon globe"></i></a>
+								        </div>
+								    </div>
+								</div>
+                            </ui:repeat>
+
+                            <div id="_down_t-shirt"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Content -->
+            </div><!--/#content.span10-->
+
+        </div><!--/.fluid-container-->
+	</ui:define>
+	
+	<ui:define name="scripts">
+		<script type="text/javascript" src="/Crevu/resources/js/backstretch.js"></script>
+        
+		<script type="text/javascript">
+            //fixed bg img
+            $(document).ready(function() { $.backstretch("/Crevu/resources/images/bg.jpg"); }); 
+        </script>
+        
+        <script type="text/javascript" src="/Crevu/resources/js/my_t-shirts.js"></script>
+        
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	</ui:define>
+</ui:composition>

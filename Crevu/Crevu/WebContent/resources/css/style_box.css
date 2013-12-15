@@ -1,0 +1,401 @@
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+._stats{
+    height: 350px;
+}
+._stats_bar{
+    width: 50%;float:left;margin:auto;
+}
+._stats_circle{
+    width: 50%;float:left;margin:auto;
+}
+
+/* HOVER STYLES */
+/*div#pop-up {
+  display: none;
+  position: absolute;
+  width: 400px;
+  height:300px;
+}
+*/
+span.dropt:hover {background: #ffffff; z-index: 6;}
+span.dropt span {position: absolute; left: -9999px;
+  margin: 20px 0 0 0px; z-index: 6;}
+span.dropt:hover span {left: 2%; background: #ffffff;} 
+span.dropt span {position: absolute; left: -9999px;
+  margin: 4px 0 0 0px; padding: 3px 3px 3px 3px;}
+span.dropt:hover span {margin: 0 0 0 170px; background: #ffffff; z-index:6;} 
+
+.medium{
+    width: 125px;
+}
+.small{
+    width: 75px;
+}
+.large{
+    width: 175px;
+}
+.usr_element{
+    float:left;
+    margin:10px;
+    padding:5px;
+}
+.noty_bar{
+    padding-top:-150px;
+}
+
+.countdown{
+    font-size: 10px;
+    color:red;
+}
+
+.fa-icon-tshirt { 
+    background-image: url(../images/t-shirt_icon.png);
+    background-size: cover;
+}
+.fa-icon-tshirt-grey{
+    color: white;
+}
+.bg-grey{
+    color: grey;
+
+}
+
+
+#_footer{
+    //position: fixed;
+    bottom: 0px;
+    width: 100;
+}
+select:first-child {
+    color: rgba(100,100,100,0.65);
+    
+}
+
+table{
+    width: 100%;
+}
+.cn-container{
+	/*min-width: 400px;
+	max-width: 950px;*/
+	margin: 10px auto 0 auto;
+	text-align: left;
+	position: relative;
+        
+}
+.cn-container h2{
+	font-family: 'Lucida Console';
+	position: absolute;
+	text-shadow: 0 0 1px rgba(0,0,0,0.8), 1px 1px 1px rgba(0,0,0,0.2);
+	font-size: 80px;
+	line-height: 80px;
+	right: 0px;
+	white-space: nowrap;
+}
+.cn-slide{
+	text-align: center;
+
+        left: 0px;
+	margin: 0;
+	width: 100%;
+        z-index: 10000;
+                
+}
+.cn-slide h2, .showcase, .events, .create{
+        position:relative;
+        text-align: right;
+        background-size: 100px;
+        padding-right: 80px;
+        
+}
+.showcase{color: gold;}
+.create{color: #FFC237;}
+.events{color:sandybrown;}
+/*
+ * t shirt box
+ */
+ .cn-slide .element a{
+     color:rgb(240,52,56);
+ }
+.cn-container .cn-slide .border-white{
+     border-color: rgba(255,255,255,0.1);
+ }
+.cn-slide .element{
+        border-radius: 2px;
+	text-align: left;
+	border: 3px solid rgba(150,150,150,0.2);
+        padding:2px;
+        font-size: 25px;
+	//letter-spacing: 3px;
+	color: #aaa;
+	line-height: 25px;
+	outline: none;
+	margin: 10px;
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+        background-color: rgba(250,250,250,0.95);
+        
+        -webkit-background-size: 100%; -moz-background-size: 100%; -o-background-size: 100%; background-size: 100%; 
+        font-family: 'Lucida Console';
+
+}
+.cn-slide .element .title{
+    margin: auto;
+    font-size: 18px;
+}
+.title a:hover{
+    text-decoration: none;
+    color: #e95353;
+}
+table tr td{
+    padding: 5px;
+    margin: 5px;
+}
+table tr td table tr td{
+    border:none;
+    background: none;
+}
+.element .title h4{
+    /*-o-text-overflow: ellipsis;    
+    text-overflow:    ellipsis;   
+    overflow:hidden;              
+    white-space:nowrap;           
+    width: 220px*/
+
+    height: auto;
+    text-decoration-line: none;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    letter-spacing: 0px;
+}
+.element h3{
+    line-height: 1.5em;
+    font-size: 1.5em;
+}
+.cn-slide .element .title h4 a{
+        color: rgba(0,0,0,0.7);
+        font-size: 0.6em;
+}
+.box-internal{
+    //border:1px solid #FDFCEE;
+}
+.cn-slide .element .author a{
+    cursor: pointer;
+    color:  #ed8e8e;
+    text-decoration: none;
+}
+.cn-slide .element .author a:hover{
+    background: none;
+}
+.cn-slide .element .author{
+    font-size:0.6em;
+    color:  #c6c5c5;
+    text-decoration: none;
+}
+
+.cn-slide .element .author span{
+    font-size: 0.8em;
+}
+.cn-slide .element .author i:hover{
+    color:  #e95353;
+    text-decoration: none;
+}
+.element .stars{
+    color:red;
+    font-size: 0.7em;
+}
+.element .stars:hover{
+    cursor:pointer;
+}
+
+.cn-slide .element .buy-nr{
+    color:grey;
+    float:right;
+}
+.cn-slide .element .social{
+    font-size: 1em;
+    padding-left: 5px;    
+    width: 75%;
+    text-align: right;
+    
+}
+.cn-slide .element i:hover{
+    color: #ffff99;
+    cursor:pointer;
+    text-shadow: 0 0 1px rgba(0,0,0,0.8), 1px 1px 1px rgba(0,0,0,0.2);
+}
+.cn-slide .user_thumb{
+    width :50px;
+    heigth:50px;
+    border-radius: 10px;
+    margin-right: 0px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+.cn-slide .creator_thumb{
+    width :50px;
+    height:50px;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+    opacity:0.8;
+    filter:alpha(opacity=80); /* For IE8 and earlier */
+    float:left;
+}
+.qty{
+    width: 42px;
+        font-family: 'Lucida Console';    
+
+    margin-top: 5px;
+}
+.buy{
+    font-family: 'Lucida Console';    
+    margin-top:5px;
+}
+.social {
+    padding:5px;
+    border-color: 1px solid rgba(0,0,255,0.8);
+    float:right;width:100%;
+}
+.social .btn{
+    font-family: 'Lucida Console';
+    text-spacing: 0px;
+}
+.social .write_comment{
+    width: 200px;
+}
+.cn-slide .element .showcase-shirt{
+    width: 220px;
+    padding: 0;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    float:left;
+}
+#comment:hover{
+    cursor:pointer;
+}
+
+
+.fb_status{
+    text-align:right;
+    font-size:10px;
+}
+.fb_status h5{
+    font-size: 11px;
+}
+
+.fb_status a{
+    color:blue;
+    padding:5px;
+}
+
+.user_tag{
+    color: #08c;
+    opacity: 0.4;
+    font-family: cursive;
+    font-family: 'Open Sans';
+    font-size: 0.6em;
+    
+}
+.cn-content{
+	background: #80B8CE url(../images/1.jpg) no-repeat center center;
+	-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
+	text-align: left;
+	padding: 20px 20px 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+	border: 8px solid #fff;
+	margin-top: 5px;
+	cursor: pointer;
+}
+.cn-content p{
+	line-height: 24px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.9);
+	color: rgba(103,59,77,0.9);
+	padding: 15px 20px;
+	margin-bottom: 10px;
+	background: rgba(255,255,255,0.96);
+	font-style: italic;
+	border-top: 7px solid rgba(103,59,77,0.6);
+}
+.cn-back{
+	outline: none;
+	text-indent: -9000px;
+	width: 49px;
+	height: 42px;
+	background: transparent url(../images/arrow.png) no-repeat center center;
+	position: absolute;
+	top: 22px;
+	left: -100px;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.cn-note{
+	text-align: right;
+	font-size: 10px;
+	font-style: normal;
+	text-align: right;
+	padding: 10px;
+	display: block;
+	font-family: Arial;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.7);
+}
+
+#slide-main .left-div{
+    width: 20%;
+    float:left;
+}
+    #slide-main .right-div{
+        width: 80%;
+        float:left;
+    }
+
+@media screen and (max-width: 1060px){
+    #slide-main .left-div,#slide-main .right-div{
+        width: 100%;
+    }
+	.cn-slide-sub nav a{
+		font-size: 28px;
+	}
+}
+.footer{
+    width: 100%;
+    bottom:0px;
+}
+@media screen and (max-width: 900px){
+    #slide-main .left-div,#slide-main .right-div{
+        width: 100%;
+    }
+    ._stats{
+        height: 500px;
+    }
+    ._stats_bar{
+        width: 100%;float:left;margin: auto;
+    }
+    ._stats_circle{
+        width: 100%;float:left;margin: auto;
+    }
+	.cn-container h2{
+		font-size: 48px;
+		line-height: 95px;
+	}
+	.cn-slide nav a{
+		font-size: 38px;
+	}
+	.cn-slide-sub nav a{
+		width: auto;
+		font-size: 36px;
+		display: block;
+	}
+	.cn-slide-sub nav a:nth-child(odd){
+		margin-right: 0px;
+	}
+}
