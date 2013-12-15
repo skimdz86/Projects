@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="assmonopoli" size="2363,2611" id="monopoli" metadata="uml2-1.0" initialized="true" scrolledY="21" tag="1000" key="3230303730313232204D6F6E6F706F6C692F7574656E74655F656738">
+  <children xsi:type="editmodel:ClassEditModel" name="Monopoli" location="520,2506" size="101,67" id="monopoli/Monopoli">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="monopoli/Monopoli#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CartelliniImp" location="50,2506" size="129,67" id="monopoli/CartelliniImp">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,18">
+      <children xsi:type="editmodel:MethodEditModel" name="azioneCartellino" id="monopoli/CartelliniImp#azioneCartellino(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Mossa" location="386,2506" size="84,85" id="monopoli/Mossa">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,36">
+      <children xsi:type="editmodel:MethodEditModel" name="muovi" id="monopoli/Mossa#muovi()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ritirare" id="monopoli/Mossa#ritirare()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" name="UserInterfaceConnector" location="50,1475" size="191,531" id="monopoli/UserInterfaceConnector">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,468">
+      <children xsi:type="editmodel:MethodEditModel" name="addNamePlayer" id="monopoli/UserInterfaceConnector#addNamePlayer(Ljava.lang.String;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPlayer" id="monopoli/UserInterfaceConnector#addPlayer(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraAlbergo" id="monopoli/UserInterfaceConnector#compraAlbergo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraCase" id="monopoli/UserInterfaceConnector#compraCase(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraCasella" id="monopoli/UserInterfaceConnector#compraCasella()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="endGame" id="monopoli/UserInterfaceConnector#endGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDoppio" id="monopoli/UserInterfaceConnector#getDoppio()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGiocatore" id="monopoli/UserInterfaceConnector#getGiocatore(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getObbligo" id="monopoli/UserInterfaceConnector#getObbligo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosition" id="monopoli/UserInterfaceConnector#getPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrevPosition" id="monopoli/UserInterfaceConnector#getPrevPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRemove" id="monopoli/UserInterfaceConnector#getRemove()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTabellone" id="monopoli/UserInterfaceConnector#getTabellone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTurno" id="monopoli/UserInterfaceConnector#getTurno()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="haiPerso" id="monopoli/UserInterfaceConnector#haiPerso()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoCasella" id="monopoli/UserInterfaceConnector#infoCasella()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoGioc" id="monopoli/UserInterfaceConnector#infoGioc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoProp" id="monopoli/UserInterfaceConnector#infoProp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isGattaBuia" id="monopoli/UserInterfaceConnector#isGattaBuia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lancioDadi" id="monopoli/UserInterfaceConnector#lancioDadi()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pagaPrigione" id="monopoli/UserInterfaceConnector#pagaPrigione()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setStopped" id="monopoli/UserInterfaceConnector#setStopped()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startGame" id="monopoli/UserInterfaceConnector#startGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tiraPrigione" id="monopoli/UserInterfaceConnector#tiraPrigione()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="usaEsciGratis" id="monopoli/UserInterfaceConnector#usaEsciGratis()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="uscitaOk" id="monopoli/UserInterfaceConnector#uscitaOk()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Imprevisti" location="390,2056" size="120,157" id="monopoli/Imprevisti">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Imprevisti#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Imprevisti#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Imprevisti" id="monopoli/Imprevisti#Imprevisti(Ljava.lang.String;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Imprevisti#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Imprevisti#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Imprevisti#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Prigione" location="220,2299" size="127,139" id="monopoli/Prigione">
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="occupante" id="monopoli/Prigione#occupante"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Prigione" id="monopoli/Prigione#Prigione(Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOccupante" id="monopoli/Prigione#getOccupante()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Prigione#isAcquistabile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setOccupante" id="monopoli/Prigione#setOccupante(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Probabilità" location="220,2056" size="120,157" id="monopoli/Probabilità">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Probabilità#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Probabilità#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Probabilità" id="monopoli/Probabilità#Probabilità(Ljava.lang.String;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Probabilità#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Probabilità#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Probabilità#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Proprietà" location="572,2299" size="123,121" id="monopoli/Proprietà">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,72">
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto" id="monopoli/Proprietà#getAffitto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrezzo" id="monopoli/Proprietà#getPrezzo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProprietario" id="monopoli/Proprietà#getProprietario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProprietario" id="monopoli/Proprietà#setProprietario(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Società" location="695,1475" size="123,337" id="monopoli/Società">
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto" id="monopoli/Società#affitto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto2" id="monopoli/Società#affitto2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Società#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="prezzo" id="monopoli/Società#prezzo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="proprietario" id="monopoli/Società#proprietario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Società#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,180">
+      <children xsi:type="editmodel:MethodEditModel" name="Società" id="monopoli/Società#Società(Ljava.lang.String;Ljava.lang.String;IZIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto" id="monopoli/Società#getAffitto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto2" id="monopoli/Società#getAffitto2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Società#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrezzo" id="monopoli/Società#getPrezzo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProprietario" id="monopoli/Società#getProprietario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Società#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Società#isAcquistabile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAffitto" id="monopoli/Società#setAffitto(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProprietario" id="monopoli/Società#setProprietario(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Stazione" location="868,1475" size="123,337" id="monopoli/Stazione">
+    <children xsi:type="editmodel:CompartmentEditModel" size="91,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto" id="monopoli/Stazione#affitto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto2" id="monopoli/Stazione#affitto2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Stazione#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="prezzo" id="monopoli/Stazione#prezzo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="proprietario" id="monopoli/Stazione#proprietario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Stazione#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,180">
+      <children xsi:type="editmodel:MethodEditModel" name="Stazione" id="monopoli/Stazione#Stazione(Ljava.lang.String;Ljava.lang.String;IZIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto" id="monopoli/Stazione#getAffitto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto2" id="monopoli/Stazione#getAffitto2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Stazione#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrezzo" id="monopoli/Stazione#getPrezzo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProprietario" id="monopoli/Stazione#getProprietario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Stazione#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Stazione#isAcquistabile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAffitto" id="monopoli/Stazione#setAffitto(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProprietario" id="monopoli/Stazione#setProprietario(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Terreno" location="516,1475" size="129,481" id="monopoli/Terreno">
+    <children xsi:type="editmodel:CompartmentEditModel" size="96,162">
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto" id="monopoli/Terreno#affitto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto2" id="monopoli/Terreno#affitto2"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="colore" id="monopoli/Terreno#colore"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Terreno#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numAlberghi" id="monopoli/Terreno#numAlberghi"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numCase" id="monopoli/Terreno#numCase"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="prezzo" id="monopoli/Terreno#prezzo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="proprietario" id="monopoli/Terreno#proprietario"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Terreno#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,270">
+      <children xsi:type="editmodel:MethodEditModel" name="Terreno" id="monopoli/Terreno#Terreno(Ljava.lang.String;Ljava.lang.String;ILjava.lang.String;ZIIIII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto" id="monopoli/Terreno#getAffitto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto2" id="monopoli/Terreno#getAffitto2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColore" id="monopoli/Terreno#getColore()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Terreno#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumAlberghi" id="monopoli/Terreno#getNumAlberghi()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumCase" id="monopoli/Terreno#getNumCase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrezzo" id="monopoli/Terreno#getPrezzo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProprietario" id="monopoli/Terreno#getProprietario()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Terreno#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Terreno#isAcquistabile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAffitto" id="monopoli/Terreno#setAffitto(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumAlberghi" id="monopoli/Terreno#setNumAlberghi(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumCase" id="monopoli/Terreno#setNumCase(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProprietario" id="monopoli/Terreno#setProprietario(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Tasse" location="50,2056" size="120,193" id="monopoli/Tasse">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="affitto" id="monopoli/Tasse#affitto"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Tasse#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Tasse#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Tasse" id="monopoli/Tasse#Tasse(Ljava.lang.String;Ljava.lang.String;IZ)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAffitto" id="monopoli/Tasse#getAffitto()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Tasse#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Tasse#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Tasse#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Transiti" location="50,2299" size="120,157" id="monopoli/Transiti">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Transiti#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Transiti#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Transiti" id="monopoli/Transiti#Transiti(Ljava.lang.String;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Transiti#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Transiti#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Transiti#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="VaiPrigione" location="730,2056" size="120,157" id="monopoli/VaiPrigione">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/VaiPrigione#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/VaiPrigione#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="VaiPrigione" id="monopoli/VaiPrigione#VaiPrigione(Ljava.lang.String;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/VaiPrigione#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/VaiPrigione#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/VaiPrigione#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Via" location="560,2056" size="120,157" id="monopoli/Via">
+    <children xsi:type="editmodel:CompartmentEditModel" size="79,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Via#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="tipo" id="monopoli/Via#tipo"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,72">
+      <children xsi:type="editmodel:MethodEditModel" name="Via" id="monopoli/Via#Via(Ljava.lang.String;Ljava.lang.String;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Via#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Via#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Via#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Dadi" location="229,2506" size="107,67" id="monopoli/Dadi">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="84,18">
+      <children xsi:type="editmodel:MethodEditModel" name="lancio_dadi" id="monopoli/Dadi#lancio_dadi()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CartelliniProb" location="745,2299" size="130,67" id="monopoli/CartelliniProb">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,18">
+      <children xsi:type="editmodel:MethodEditModel" name="azioneCartellino" id="monopoli/CartelliniProb#azioneCartellino(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="GUI" location="291,1475" size="175,392" id="monopoli/GUI">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="128,90">
+      <children xsi:type="editmodel:MethodEditModel" name="CreateAndShowGUI" id="monopoli/GUI#CreateAndShowGUI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="GuiSelez" id="monopoli/GUI#GuiSelez(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ShowNumber" id="monopoli/GUI#ShowNumber()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SpostamentoPedine" id="monopoli/GUI#SpostamentoPedine(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="VoloPedine" id="monopoli/GUI#VoloPedine()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="152,243">
+      <children xsi:type="editmodel:ClassEditModel" name="MyActionListener" size="151,85" id="monopoli/GUI$MyActionListener">
+        <children xsi:type="editmodel:CompartmentEditModel" size="97,18">
+          <children xsi:type="editmodel:AttributeEditModel" name="nomebott" id="monopoli/GUI$MyActionListener#nomebott"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="109,18">
+          <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="monopoli/GUI$MyActionListener#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+      </children>
+      <children xsi:type="editmodel:ClassEditModel" name="MyButtonListener" size="152,85" id="monopoli/GUI$MyButtonListener">
+        <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+          <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/GUI$MyButtonListener#nome"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel" size="109,18">
+          <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="monopoli/GUI$MyButtonListener#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+      </children>
+      <children xsi:type="editmodel:ClassEditModel" name="endException" size="129,67" id="monopoli/GUI$endException">
+        <children xsi:type="editmodel:CompartmentEditModel"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="95,18">
+          <children xsi:type="editmodel:MethodEditModel" name="endException" id="monopoli/GUI$endException#endException()"/>
+        </children>
+        <children xsi:type="editmodel:CompartmentEditModel"/>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+      </children>
+    </children>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Spostamento" location="397,2299" size="125,121" id="monopoli/Spostamento">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="68,72">
+      <children xsi:type="editmodel:MethodEditModel" name="doppio" id="monopoli/Spostamento#doppio(II)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mossa1" id="monopoli/Spostamento#mossa1()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mossa2" id="monopoli/Spostamento#mossa2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="somma" id="monopoli/Spostamento#somma(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Tabellone" location="50,638" size="121,139" id="monopoli/Tabellone">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="98,90">
+      <children xsi:type="editmodel:MethodEditModel" name="allSoc" id="monopoli/Tabellone#allSoc(Lmonopoli.Giocatore;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="allStaz" id="monopoli/Tabellone#allStaz(Lmonopoli.Giocatore;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="creaTabellone" id="monopoli/Tabellone#creaTabellone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="scanColorex2" id="monopoli/Tabellone#scanColorex2(Lmonopoli.Casella;Lmonopoli.Giocatore;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="scanColorex3" id="monopoli/Tabellone#scanColorex3(Lmonopoli.Casella;Lmonopoli.Giocatore;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="monopoli/Casella@listaCaselle+monopoli/Tabellone@" source="//@children.19" target="//@children.21" targetEnd="//@children.19/@sourceConnections.0/@children.2" label="//@children.19/@sourceConnections.0/@children.0" sourceEnd="//@children.19/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="111,0" id="monopoli/Casella@listaCaselle+monopoli/Tabellone@|monopoli/Tabellone#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="listaCaselle" location="0,93" id="monopoli/Casella@listaCaselle+monopoli/Tabellone@|monopoli/Casella#listaCaselle" multiplicityLabel="//@children.19/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.19/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - listaCaselle" location="375,546" size="64,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="435,574" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.21/@sourceConnections.1 //@children.22/@sourceConnections.0" name="Giocatore" location="864,497" size="136,481" id="monopoli/Giocatore">
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="denaro" id="monopoli/Giocatore#denaro"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="n_turni_fermo" id="monopoli/Giocatore#n_turni_fermo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nome" id="monopoli/Giocatore#nome"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="numero" id="monopoli/Giocatore#numero"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="posizione" id="monopoli/Giocatore#posizione"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ritirato" id="monopoli/Giocatore#ritirato"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="uscita" id="monopoli/Giocatore#uscita"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,306">
+      <children xsi:type="editmodel:MethodEditModel" name="Giocatore" id="monopoli/Giocatore#Giocatore(ILjava.lang.String;IIZII)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDenaro" id="monopoli/Giocatore#getDenaro()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getN_turni_fermo" id="monopoli/Giocatore#getN_turni_fermo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Giocatore#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumero" id="monopoli/Giocatore#getNumero()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosizione" id="monopoli/Giocatore#getPosizione()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProprietà" id="monopoli/Giocatore#getProprietà()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRitirato" id="monopoli/Giocatore#getRitirato()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isUscita" id="monopoli/Giocatore#isUscita()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDenaro" id="monopoli/Giocatore#setDenaro(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setN_turni_fermo" id="monopoli/Giocatore#setN_turni_fermo(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNome" id="monopoli/Giocatore#setNome(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setNumero" id="monopoli/Giocatore#setNumero(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPosizione" id="monopoli/Giocatore#setPosizione(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProprietà" id="monopoli/Giocatore#setProprietà(Lmonopoli.Casella;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setRitirato" id="monopoli/Giocatore#setRitirato(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUscita" id="monopoli/Giocatore#setUscita(Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.19/@sourceConnections.0" name="Casella" location="446,474" size="120,103" id="monopoli/Casella">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,54">
+      <children xsi:type="editmodel:MethodEditModel" name="getNome" id="monopoli/Casella#getNome()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTipo" id="monopoli/Casella#getTipo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAcquistabile" id="monopoli/Casella#isAcquistabile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="monopoli/Casella@lista+monopoli/TestUnit@" source="//@children.21" target="//@children.23" targetEnd="//@children.21/@sourceConnections.0/@children.2" label="//@children.21/@sourceConnections.0/@children.0" sourceEnd="//@children.21/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="lista" location="35,0" id="monopoli/Casella@lista+monopoli/TestUnit@|monopoli/Casella#lista" attachSource="true" multiplicityLabel="//@children.21/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.21/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - lista" location="488,453" size="29,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="470,453" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,157" id="monopoli/Casella@lista+monopoli/TestUnit@|monopoli/TestUnit#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="monopoli/Casella@proprietà+monopoli/Giocatore@" source="//@children.21" target="//@children.20" targetEnd="//@children.21/@sourceConnections.1/@children.2" label="//@children.21/@sourceConnections.1/@children.0" sourceEnd="//@children.21/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="proprietà" location="120,62" id="monopoli/Casella@proprietà+monopoli/Giocatore@|monopoli/Casella#proprietà" attachSource="true" multiplicityLabel="//@children.21/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.21/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - proprietà" location="573,515" size="53,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="573,543" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,39" id="monopoli/Casella@proprietà+monopoli/Giocatore@|monopoli/Giocatore#"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="monopoli/Casella@tavolo+monopoli/Game@" source="//@children.21" target="//@children.22" targetEnd="//@children.21/@sourceConnections.2/@children.2" label="//@children.21/@sourceConnections.2/@children.0" sourceEnd="//@children.21/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="tavolo" location="110,103" id="monopoli/Casella@tavolo+monopoli/Game@|monopoli/Casella#tavolo" attachSource="true" multiplicityLabel="//@children.21/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.21/@sourceConnections.2/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - tavolo" location="510,584" size="39,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="563,584" size="4,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" id="monopoli/Casella@tavolo+monopoli/Game@|monopoli/Game#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.21/@sourceConnections.2" name="Game" location="684,818" size="128,607" id="monopoli/Game">
+    <children xsi:type="editmodel:CompartmentEditModel" size="73,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="position" id="monopoli/Game#position"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,540">
+      <children xsi:type="editmodel:MethodEditModel" name="SorteggioImp" id="monopoli/Game#SorteggioImp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="SorteggioProb" id="monopoli/Game#SorteggioProb()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="VaiInGalera" id="monopoli/Game#VaiInGalera()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addNamePlayer" id="monopoli/Game#addNamePlayer(Ljava.lang.String;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addPlayer" id="monopoli/Game#addPlayer(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraAlbergo" id="monopoli/Game#compraAlbergo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraCase" id="monopoli/Game#compraCase(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compraCasella" id="monopoli/Game#compraCasella()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="endGame" id="monopoli/Game#endGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDoppio" id="monopoli/Game#getDoppio()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGiocatore" id="monopoli/Game#getGiocatore(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getObbligo" id="monopoli/Game#getObbligo()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPosition" id="monopoli/Game#getPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPrevPosition" id="monopoli/Game#getPrevPosition()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRemove" id="monopoli/Game#getRemove()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTabellone" id="monopoli/Game#getTabellone()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTurno" id="monopoli/Game#getTurno()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="haiPerso" id="monopoli/Game#haiPerso()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoCasella" id="monopoli/Game#infoCasella()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoGioc" id="monopoli/Game#infoGioc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="infoProp" id="monopoli/Game#infoProp()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isGattaBuia" id="monopoli/Game#isGattaBuia()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="lancioDadi" id="monopoli/Game#lancioDadi()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="pagaPrigione" id="monopoli/Game#pagaPrigione()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="resetProprietà" id="monopoli/Game#resetProprietà()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setStopped" id="monopoli/Game#setStopped()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="startGame" id="monopoli/Game#startGame()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="tiraPrigione" id="monopoli/Game#tiraPrigione()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="usaEsciGratis" id="monopoli/Game#usaEsciGratis()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="uscitaOk" id="monopoli/Game#uscitaOk()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="monopoli/Giocatore@listagioc+monopoli/Game@" source="//@children.22" target="//@children.20" targetEnd="//@children.22/@sourceConnections.0/@children.2" label="//@children.22/@sourceConnections.0/@children.0" sourceEnd="//@children.22/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="128,79" id="monopoli/Giocatore@listagioc+monopoli/Game@|monopoli/Game#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="listagioc" location="0,400" id="monopoli/Giocatore@listagioc+monopoli/Game@|monopoli/Giocatore#listagioc" multiplicityLabel="//@children.22/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.22/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - listagioc" location="808,876" size="49,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="853,904" size="4,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.21/@sourceConnections.0" name="TestUnit" location="379,50" size="139,157" id="monopoli/TestUnit">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,108">
+      <children xsi:type="editmodel:MethodEditModel" name="TestUnit" id="monopoli/TestUnit#TestUnit(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="monopoli/TestUnit#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testAllSoc" id="monopoli/TestUnit#testAllSoc()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testAllStaz" id="monopoli/TestUnit#testAllStaz()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testScanColorex2" id="monopoli/TestUnit#testScanColorex2()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testScanColorex3" id="monopoli/TestUnit#testScanColorex3()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
