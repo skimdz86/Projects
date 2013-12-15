@@ -13,7 +13,7 @@ public class CallSeatwaveService {
 		com.seatwave.api.v2.DiscoveryAPIStub stub =
 				new com.seatwave.api.v2.DiscoveryAPIStub();
 		EventsSearch request = new EventsSearch();
-		request.setApiKey("ef677ed4c8c740c2b3710287bf4c8b07");
+		request.setApiKey("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		request.setSiteId(5);
 		if(what!=null && !what.equals("")) request.setWhat(what);
 		request.setWhere(where);

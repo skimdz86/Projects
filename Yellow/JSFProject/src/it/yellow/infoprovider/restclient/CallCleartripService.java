@@ -26,7 +26,7 @@ public class CallCleartripService {
 //				"&adults=3" +
 //				"&cabin-type=Economy";
 		WebClient client=WebClient.create(url);
-        client.header("X-CT-API-KEY", "30850e35b55fc06af39e6fd9c8ea5dc6");
+        client.header("X-CT-API-KEY", "XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         client.accept("application/xml");
         client.query("from", from);//IATA CODES da tenere nel db!
         client.query("to", to);

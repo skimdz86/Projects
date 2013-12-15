@@ -34,7 +34,7 @@ public class TestServiceExpedia {
         
            GetListE getList0 = new GetListE();
            HotelListRequest req = new HotelListRequest();
-           req.setApiKey("cjpkx9y3j6rfyr8s6drz6q4y");
+           req.setApiKey("XXXXXXXXXXXXXXXXXXXXXXXXXX");
            req.setCid(55505);
            req.setCustomerIpAddress("79.17.154.169");
            req.setCustomerUserAgent("Mozilla/Firefox 5.0");

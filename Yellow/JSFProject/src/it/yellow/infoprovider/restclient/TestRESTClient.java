@@ -28,7 +28,7 @@ public class TestRESTClient {
 //			HttpURLConnection connection = 
 //			    (HttpURLConnection) url2.openConnection();
 //			connection.setRequestMethod("GET");
-//			connection.addRequestProperty("X-CT-API-KEY", "30850e35b55fc06af39e6fd9c8ea5dc6");
+//			connection.addRequestProperty("X-CT-API-KEY", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 //			connection.setRequestProperty("Accept", "application/xml");
 //			 
 //			JAXBContext jc = JAXBContext.newInstance(AirSearchResult.class);
@@ -39,7 +39,7 @@ public class TestRESTClient {
 //			connection.disconnect();
 //		System.out.println(searchRes);
 		WebClient client=WebClient.create(url+"?"+paramString);
-        client.header("X-CT-API-KEY", "30850e35b55fc06af39e6fd9c8ea5dc6");
+        client.header("X-CT-API-KEY", "XXXXXXXXXXXXXXXXXXXXXXXXXXX");
         client.accept("application/xml");
 //        Response res = client.get();
 //        ResponseBuilder builder = Response.fromResponse(res);

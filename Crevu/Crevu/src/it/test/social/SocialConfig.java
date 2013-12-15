@@ -10,10 +10,10 @@ import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 @Configuration
 public class SocialConfig {
 	
-	String fbId = "145924835584148";
-	String fbSecret = "598bc53141d4e0bfab0ce3ff050c3ecb";
-	String twId = "VF4tvfddhO1LYtel0sEA";
-	String twSecret = "zejF9Z9ELL8fwtGa0MlYga9PwvGkbM8U3nmEJMwmgrM";
+	String fbId = "XXXXXXXXXXXXXXX";
+	String fbSecret = "XXXXXXXXXXXXXXXXXXXXx";
+	String twId = "XXXXXXXXXXXXXXXXXXXXX";
+	String twSecret = "XXXXXXXXXXXXXXXXXXXXXXX";
 	
     @Bean
     public ConnectionFactoryLocator connectionFactoryLocator() {

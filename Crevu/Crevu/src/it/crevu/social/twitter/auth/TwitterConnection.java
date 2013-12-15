@@ -19,8 +19,8 @@ public class TwitterConnection {
 
 //	private static final String ACCOUNT_TYPE_TWITTER = "TWITTER";
 	
- String ACCESSTOKEN = "1173193586-C4ODnaDLTClhAVF8YypW5MvHBz2ZTJ5ZcDWGtWI";
- String ACCESS_TOKEN_SECRET = "kCfB4QfdUpuvzGbAslyt0u1VquzoECDJw4DMk20Kg0";
+ String ACCESSTOKEN = "1173193586-XXXXXXXXXXXXXXXXXXXXXXXXXXxx";
+ String ACCESS_TOKEN_SECRET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	 
 // 	@Inject
 // 	SocialAccountDAO socialAccountDAO;
@@ -140,8 +140,8 @@ public class TwitterConnection {
 //		ConfigurationBuilder cb = new ConfigurationBuilder();
 //
 //		// the following is set without accesstoken- desktop client
-//		cb.setDebugEnabled(true).setOAuthConsumerKey("VF4tvfddhO1LYtel0sEA")
-//				.setOAuthConsumerSecret("zejF9Z9ELL8fwtGa0MlYga9PwvGkbM8U3nmEJMwmgrM");
+//		cb.setDebugEnabled(true).setOAuthConsumerKey("XXXXXXXXXXXXXXXX")
+//				.setOAuthConsumerSecret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
 //
 //		try {
 //			TwitterFactory tf = new TwitterFactory(cb.build());

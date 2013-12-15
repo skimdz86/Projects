@@ -18,8 +18,8 @@ import java.io.InputStreamReader;
 
 public class TwitterConnection4J {
 
- String ACCESSTOKEN = "1173193586-C4ODnaDLTClhAVF8YypW5MvHBz2ZTJ5ZcDWGtWI";
- String ACCESS_TOKEN_SECRET = "kCfB4QfdUpuvzGbAslyt0u1VquzoECDJw4DMk20Kg0";
+ String ACCESSTOKEN = "1173193586-XXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+ String ACCESS_TOKEN_SECRET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 	 
  
  	String consumerKey;
@@ -39,8 +39,8 @@ public class TwitterConnection4J {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 
 		// the following is set without accesstoken- desktop client
-		cb.setDebugEnabled(true).setOAuthConsumerKey("VF4tvfddhO1LYtel0sEA")
-				.setOAuthConsumerSecret("zejF9Z9ELL8fwtGa0MlYga9PwvGkbM8U3nmEJMwmgrM");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXx")
+				.setOAuthConsumerSecret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 		try {
 			TwitterFactory tf = new TwitterFactory(cb.build());
@@ -151,8 +151,8 @@ public class TwitterConnection4J {
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 
 		// the following is set without accesstoken- desktop client
-		cb.setDebugEnabled(true).setOAuthConsumerKey("VF4tvfddhO1LYtel0sEA")
-				.setOAuthConsumerSecret("zejF9Z9ELL8fwtGa0MlYga9PwvGkbM8U3nmEJMwmgrM");
+		cb.setDebugEnabled(true).setOAuthConsumerKey("XXXXXXXXXXXXXXXXXXXXXXXXXXXXx")
+				.setOAuthConsumerSecret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 		try {
 			TwitterFactory tf = new TwitterFactory(cb.build());

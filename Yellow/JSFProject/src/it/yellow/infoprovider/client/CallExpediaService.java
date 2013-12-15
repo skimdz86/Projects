@@ -31,7 +31,7 @@ public class CallExpediaService {
         
            GetListE getList0 = new GetListE();
            HotelListRequest req = new HotelListRequest();
-           req.setApiKey("cjpkx9y3j6rfyr8s6drz6q4y");
+           req.setApiKey("XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
            req.setCid(55505);
            req.setCustomerIpAddress("79.17.154.169");
            req.setCustomerUserAgent("Mozilla/Firefox 5.0");
@@ -77,7 +77,7 @@ public class CallExpediaService {
         
            GetAvailabilityE getAvailability4 = new GetAvailabilityE();
            HotelRoomAvailabilityRequest req = new HotelRoomAvailabilityRequest();
-           req.setApiKey("cjpkx9y3j6rfyr8s6drz6q4y");
+           req.setApiKey("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
            req.setCid(55505);
            req.setCustomerIpAddress("79.17.154.169");
            req.setCustomerUserAgent("Mozilla/Firefox 5.0");
@@ -128,7 +128,7 @@ public class CallExpediaService {
         
            GetListE getList0 = new GetListE();
            HotelListRequest req = new HotelListRequest();
-           req.setApiKey("cjpkx9y3j6rfyr8s6drz6q4y");
+           req.setApiKey("XXXXXXXXXXXXXXXXXXXXXXXX");
            req.setCid(55505);
            req.setCustomerIpAddress("79.17.154.169");
            req.setCustomerUserAgent("Mozilla/Firefox 5.0");

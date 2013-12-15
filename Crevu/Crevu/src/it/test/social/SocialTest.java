@@ -42,8 +42,8 @@ public class SocialTest extends BaseTest{
 	private void testFB2() {
 		// TODO Auto-generated method stub
 		FacebookMethods met = (FacebookMethods)ctx.getBean(FacebookMethods.class);
-//		TwitterMethods met = new TwitterMethods("1173193586-2j5ghkQyAKyK8IREQ5Gn0i7xhcAYvoR8wxnWGWI", "JUUIjgBWWx65kisotwJpHTOBkBurTtGOnMFVYcDGOk");
-		met.initialize("BAACEdEose0cBAOz3FPb5NFksZCVJxV6zt6CRUMNehNi5WIJJjK35ZAN3LFevzTkRrQo15ZCUmXOnHCUbtpNZA1Y5MIsk05dcSXK78bm1Cm8h4uzKfmnPTOuMuqwIZA0sZD");
+//		TwitterMethods met = new TwitterMethods("1173193586-XXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXX");
+		met.initialize("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx");
 		List<Post> asd = met.getLatestPosts(10);
 		FacebookProfile iuehfwi = met.getProfile();
 		String post = met.post("test11");
@@ -54,7 +54,7 @@ public class SocialTest extends BaseTest{
 		FacebookConnectionFactory fbFactory = (FacebookConnectionFactory)ctx.getBean("facebookConnectionFactory");
 		//OAuthToken token = new OAuthToken("1173193586-2j5ghkQyAKyK8IREQ5Gn0i7xhcAYvoR8wxnWGWI", "JUUIjgBWWx65kisotwJpHTOBkBurTtGOnMFVYcDGOk");
 		
-		AccessGrant accessGrant = new AccessGrant("AAACEt8X9KJQBALnPWrQPI7tZAxhIZAYmfwHIk2WMI3ZBrIZBjYupT0S8EnR5IG5B7fHmOihRdTlIM2Am88ToFjCyvFQ2BHvQZAU69nWhJCkzwO6Evbf5q");
+		AccessGrant accessGrant = new AccessGrant("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 		Connection<Facebook> conn = fbFactory.createConnection(accessGrant);
 		
 		Facebook fb = conn.getApi();
@@ -65,7 +65,7 @@ public class SocialTest extends BaseTest{
 	
 	public void testTweet(){
 		TwitterConnectionFactory twitterFactory = (TwitterConnectionFactory)ctx.getBean("twitterConnectionFactory");
-		OAuthToken token = new OAuthToken("1173193586-2j5ghkQyAKyK8IREQ5Gn0i7xhcAYvoR8wxnWGWI", "JUUIjgBWWx65kisotwJpHTOBkBurTtGOnMFVYcDGOk");		
+		OAuthToken token = new OAuthToken("1173193586-XXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");		
 		Connection<Twitter> conn = twitterFactory.createConnection(token);
 		
 		Twitter twitter = conn.getApi();
@@ -82,8 +82,8 @@ public class SocialTest extends BaseTest{
 	
 	public void testTwitter2(){
 		TwitterMethods met = (TwitterMethods)ctx.getBean(TwitterMethods.class);
-//		TwitterMethods met = new TwitterMethods("1173193586-2j5ghkQyAKyK8IREQ5Gn0i7xhcAYvoR8wxnWGWI", "JUUIjgBWWx65kisotwJpHTOBkBurTtGOnMFVYcDGOk");
-		met.initialize("1173193586-C4ODnaDLTClhAVF8YypW5MvHBz2ZTJ5ZcDWGtWI", "kCfB4QfdUpuvzGbAslyt0u1VquzoECDJw4DMk20Kg0");
+//		TwitterMethods met = new TwitterMethods("1173193586-XXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+		met.initialize("1173193586-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 //		List<Tweet> asd = met.getLatestTweets(100);
 		TwitterProfile iuehfwi = met.getProfile();
 //		Tweet asdddd = met.tweet("test11");
