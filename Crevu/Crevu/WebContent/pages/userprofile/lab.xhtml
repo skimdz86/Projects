@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="header">
+		
+		<link rel="stylesheet" type="text/css" href="/Crevu/resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/style_box.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/prettyPhoto.css" />
+        
+    </ui:define>
+	
+	<ui:define name="content">
+	            <!-- start: Menu -->
+        <div class="container-fluid" style="width: 80%;margin:auto;">
+            <!-- start: Content -->
+            <div id="content">
+                <!--[if lte IE 9]>
+                <p style="font-size: 20px; padding: 50px;">Sorry, this only works in modern browsers...</p>
+                <![endif]-->
+                <!-- start: Main Menu -->
+
+                <!-- end: Main Menu -->
+                <div class="cn-container">
+                    <div class="cn-slide" id="slide-main">
+                        <h2 class="showcase">Lab</h2>
+
+                        <div class="left-div">
+                            <div class="element" id="_side_menu_main">
+                            	<ui:include src="/WEB-INF/views/side_menu_main.xhtml"></ui:include>
+                            </div>
+                            <div id="_side_boxes">
+                            	<ui:include src="/WEB-INF/views/side_menu_boxed.xhtml"></ui:include>
+                            </div>
+                        </div>
+                        <div class="right-div">
+                            <div id="_lab_results">
+                            	<ui:repeat value="#{userController.labTshirts}" var="tshirt">
+                            		<h:panelGroup id="_lab_row">
+                            			<div class="element">
+										    <table>
+										        <tr>
+										            <td colspan="5">
+										                <span class="dropt" onmouseover="preview(this, '.title h5')">
+										                    <div class="title" style="margin-top: 0px;">
+										                        <h5>#{tshirt.message}</h5>
+										                    </div>
+										                    <span style="width: 400px;height:300px;" id="_preview_t-shirt">
+										                        
+										                    </span>
+										                </span>
+										                
+										            </td>
+										        </tr>
+										        <tr>
+										            <td>
+										                <span id="time_left"></span>
+										            </td>
+										            <td>
+										                <a class="btn btn-info" href="user_details.html" style="color: white;float:right;">Remove <span class="break"></span> <i class="halflings-icon trash"></i></a>
+										            </td>
+										            <td>
+										                <a class="btn btn-danger" href="buy.html" style="color: white;float:right;">Go Live <span class="break"></span> <i class="halflings-icon globe"></i></a>
+										            </td>
+										        </tr>
+										    </table>
+										</div>
+                            		</h:panelGroup>
+                            	</ui:repeat>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Content -->
+            </div><!--/#content.span10-->
+
+        </div><!--/.fluid-container-->
+	</ui:define>
+	
+	<ui:define name="scripts">
+		<script type="text/javascript" src="/Crevu/resources/js/backstretch.js"></script>
+        
+		<script type="text/javascript">
+            //fixed bg img
+            $(document).ready(function() { $.backstretch("/Crevu/resources/images/bg.jpg"); }); 
+        </script>
+        
+        <script type="text/javascript" src="/Crevu/resources/js/lab.js"></script>
+        
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	</ui:define>
+</ui:composition>

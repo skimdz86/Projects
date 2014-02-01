@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="header">
+		
+		<link rel="stylesheet" type="text/css" href="/Crevu/resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/style_box.css" />
+        <link rel="stylesheet" type="text/css" href="/Crevu/resources/css/prettyPhoto.css" />
+        
+    </ui:define>
+	
+	<ui:define name="content">
+	           <!-- start: Menu -->
+        <div class="container-fluid" style="width: 80%;margin:auto;">
+            <!-- start: Content -->
+            <div id="content">
+                <!--[if lte IE 9]>
+                <p style="font-size: 20px; padding: 50px;">Sorry, this only works in modern browsers...</p>
+                <![endif]-->
+                <!-- start: Main Menu -->
+
+                <!-- end: Main Menu -->
+                <div class="cn-container">
+                    <div class="cn-slide" id="slide-main">
+                        <h2 class="showcase">Cash</h2>
+
+                        <div class="left-div">
+                            <div class="element" id="_side_menu_main"></div>
+                            <div id="_side_boxes"></div>
+                        </div>
+
+                        <div class="right-div">
+                            <div class="element _stats">
+                                <div class="box-header"><i class="fa-icon-signal"></i><span class="break"></span>
+                                    Stats
+                                    <div class="box-icon">
+                                        <a style="cursor:pointer;" class="btn-mini btn-navbar"><i class="fa-icon-globe"></i> Create a meetup</a> 
+                                    </div>
+                                </div>
+                                
+                                    <div class="_stats_circle">
+                                        <div class="circleStats">
+                                            <h5>Due</h5>
+                                            <div class="circleStatsItem red">
+                                                <i style="font-family:'Arial';">€</i>
+                                                <span class="percent">%</span>
+                                                <div style="width:120px;display:inline;">
+                                                    <input readonly="readonly" style="width: 60px; margin-top: 42.8571px; margin-left: -90px; font-size: 30px; border: medium none; background: none repeat scroll 0% 0% transparent; font-family: Arial; font-weight: bold; text-align: center; color: rgb(250, 88, 51); padding: 0px;" value="58" class="orangeCircle" type="text">
+                                                    <canvas width="120" height="120"></canvas>
+                                                </div>
+                                            </div>
+                                            <div style="font-family: 'Arial';font-size:15px;">510k/600k</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="_stats_bar">
+                                        <h5>Your audience</h5>
+                                        <div class="verticalChart">
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 37%;">
+                                                        <span style="display: inline;">37%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="united states">US</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 16%;">
+                                                        <span style="display: inline;">16%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="porca loca">PL</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 12%;">
+                                                        <span style="display: inline;">12%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="great britain">GB</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 9%;">
+                                                        <span style="display: inline;">9%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="deutchland">DE</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 7%;">
+                                                        <span style="display: inline;">7%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="netherland">NL</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 6%;">
+                                                        <span style="display: inline;">6%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="california">CA</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 5%;">
+                                                        <span style="display: inline;">5%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title">FI</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 4%;">
+                                                        <span style="display: inline;">4%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="russia">RU</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 3%;">
+                                                        <span style="display: inline;">3%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="austria">AU</div>
+                                            </div>
+                                            <div class="singleBar">
+                                                <div class="bar">
+                                                    <div class="value" style="height: 1%;">
+                                                        <span style="display: inline;">1%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="title" title="italy,azz,mazz">N/A</div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="element border-white" style="background-color: white;">
+                                <div class="box-header"><i class="fa-icon-eye-open"></i><span class="break"></span>
+                                    Views
+                                    <div class="box-icon">
+                                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="box-content">
+                                    <ul class="dashboard-list">
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">92</span>
+                                                Tweet 1                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">15</span>
+                                                Fb status 10
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">36</span>
+                                                another cool slogan 15                                 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">112</span>
+                                                spread my word 5                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">31</span>
+                                                my cool event 12
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">93</span>
+                                                Dario in the jungle                                    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">93</span>
+                                                Dario in the jungle                                    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="blue">93</span>                                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="element border-white" style="background-color: white;">
+                                <div class="box-header">
+                                    <i class="fa-icon-calendar"></i><span class="break"></span>Events [€]
+                                    <div class="box-icon">
+                                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                                    </div>
+                                </div>
+                                <div class="box-content">
+                                    <ul class="dashboard-list">
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">92</span>
+                                                Monza on the road                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">150k</span>
+                                                My t-shirt in Central Park
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">36</span>
+                                                CamComCim Business 1st event                               
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">112</span>
+                                                spread my word in the world                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">31M</span>
+                                                Korea Krevu
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">150M</span>
+                                                Dario in the jungle Vol 1                                  
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="blue">93</span>                                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="element border-white" style="background-color: white;">
+                                <div class="box-header"><i class="fa-icon-money"></i><span class="break"></span>Money [€]
+
+                                    <div class="box-icon">
+                                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="box-content">
+                                    <ul class="dashboard-list">
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">92</span>
+                                                Tweet 1                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">15</span>
+                                                Fb status 10
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">36</span>
+                                                another cool slogan 15                                 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">112</span>
+                                                spread my word 5                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">31</span>
+                                                my cool event 12
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">93</span>
+                                                Dario in the jungle                                    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="blue">93</span>                                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="element border-white" style="background-color: white;">
+                                <div class="box-header"><i class="fa-icon-thumbs-up"></i><span class="break"></span>Likes
+                                    <div class="box-icon">
+                                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="box-content">
+                                    <ul class="dashboard-list">
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">92</span>
+                                                Tweet 1                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">15</span>
+                                                Fb status 10
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">36</span>
+                                                another cool slogan 15                                 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-up green"></i>                               
+                                                <span class="green">112</span>
+                                                spread my word 5                                   
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-arrow-down red"></i>
+                                                <span class="red">31</span>
+                                                my cool event 12
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a >
+                                                <i class="fa-icon-minus blue"></i>
+                                                <span class="blue">93</span>
+                                                Dario in the jungle                                    
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="blue">93</span>                                    
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>                   
+                            
+                                <div class="element chat-form">
+                                    <form name="issue">
+                                        <textarea placeholder="Report an issue"></textarea>
+                                        <button type="submit" class="btn btn-alert" style="width: 100%;">Send message</button>
+                                    </form>     
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- end: Content -->
+            </div><!--/#content.span10-->
+
+        </div><!--/.fluid-container-->
+	</ui:define>
+	
+</ui:composition>

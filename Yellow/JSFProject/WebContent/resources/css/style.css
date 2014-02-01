@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* =Reset default browser CSS.
+-------------------------------------------------------------- */
+
+/*Old classes*/
+.nomedato{color:#999}
+.bigBold{font-weight: bold;color:#FF7C00}
+.leftColumn{}
+
+.rightColumn{}
+
+/*#flightPanel td {max-width:250px;word-wrap: break-word;}
+#hotelPanel td {max-width:250px;word-wrap: break-word;}
+#eventPanel td {max-width:250px;word-wrap: break-word;}
+*/
+.flightPanel{float:left;width:410px;border-right:1px solid black;}
+.hotelPanel{float:left;width:400px;border-right:1px solid black;}
+.eventPanel{float:left;width:400px;}
+
+.flightPanel1, .flightPanel2, .flightPanel3{
+width: 30%; float:left;border: 1px solid #DDD; background: #FEFEFE; padding: 0; margin: 8px 5px; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;
+font-size: 0.8em;}
+
+.hotelPanelSingle{clear: both; padding: 15px; background: #F1F1F1; margin: 15px -15px 15px -25px; border-left: 15px solid #7CF; float:left}
+.eventPanelSingle{clear:both;border-bottom: 1px solid black;padding-bottom:30px /*; display:inline-block*/}
+
+.errorMessage{border-style:solid;border-color:#FF7C00;border-width:3px;color:#FF7C00; padding:3px 10px;-webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; margin: 15px;display: inline-block;}
+
+/*end old classes*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+:focus {/* remember to define focus styles! */
+	outline: 0;
+}
+body {
+	background: #f1f1f1;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a img {
+	border: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/*fine reset*/
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	color:#666
+}
+
+
+#wrapper{
+	margin:0px;!important
+	padding:1px 2px 5px 2px;
+	background:#fafafa url(../img/bg-wrapper.png) -30px center no-repeat;
+}
+
+#header {
+width: 216px;
+border-right: 2px solid #DDD;
+background: #FAFAFA;
+float: left;
+display: block;
+margin: 0 15px 0px 6px;
+height: 408px;
+
+}
+
+#header .logo {
+height: 100px;
+background: url(../img/logo.png) left center no-repeat;
+display: block;
+margin-left:15px;
+
+}
+
+#payoff {
+display: block;
+margin-left: 27px;
+color: #333;
+}
+
+#content{
+	margin:0 15px 20px 15px}
+
+#content #input{
+	border-top:2px solid #fff;
+	border-left: 6px solid #ffbd00;
+	background:#f8f8f8 url(../img/bg-wrapper.png) -100px center no-repeat;
+	margin:0 -15px 0 -15px;
+	padding:15px 30px;
+	font-size:14px}
+	
+#input table{
+	}
+
+#input table tbody tr{
+border-bottom:1px solid #006} 
+
+#input table tbody tr td{
+	padding: 2px 20px 2px 0;
+	vertical-align:middle;
+} 
+
+#output{
+	/*width:100%;*/
+	background:#222;
+	margin: 0px -15px 15px -15px;
+	padding:15px;
+	border-left: 10px solid #FF7C00;
+}
+
+#output .title{
+	background: #FFBD00;
+	padding: 15px 15px 9px 15px;
+	color: white;
+	display: block;
+	border-radius: 15px 15px 6px 6px;}
+	
+#output .blocco, #hotelPanel table, #eventPanel table {
+	background-image:url(../img/hr-panel.png);
+	background-position: bottom center;
+	background-repeat:repeat-x;
+	margin: 2px;
+	padding: 15px 15px 35px 15px;
+}
+
+#output .blocco table{
+	margin: 5px 0px 15px;
+}
+
+#hotelPanel table, #eventPanel table {
+width: 23%;
+vertical-align: top;
+/* float: left; */
+margin-top: 6px;
+}
+
+#hotelPanel table {
+background-color: #FAFAFA;
+float: left; /* Prima era qui sopra */
+}
+
+#eventPanel table{
+background-color: #111
+}
+
+#hotelPanel tr td, #eventPanel tr td {
+padding: 3px;
+font-size:0.8em}
+
+#hotelPanel tr td a:link, #hotelPanel tr td a:visited, #eventPanel tr td a:link, #eventPanel tr td a:visited{
+padding: 3px 8px;
+display:block;
+background:url(../img/go-link.png) left 0 no-repeat;
+text-indent:15px;
+text-decoration:none;
+color:#09F}
+
+#hotelPanel tr td a:hover,
+#eventPanel tr td a:hover{
+background-position:left -24px;
+color:#0CF
+}
+
+#hotelPanel img, #eventPanel img {
+border: 1px solid #AAA;
+max-width: 98%;
+}
+
+/*Aggiunta per cambiare colore alla progress bar*/
+.ui-progressbar .ui-widget-header{
+	background:#FF7C00;
+	background:#FF7C00 linear-gradient(top, rgba(255, 189, 0, 0.9), rgba(255, 189, 0, 0.3));
+	background:#FF7C00 -webkit-gradient(linear, left top, left bottom, from(rgba(255, 189, 0, 0.9)), to(rgba(255, 189, 0, 0.3)));
+	background:#FF7C00 -moz-linear-gradient(top, rgba(255, 189, 0, 0.9), rgba(255, 189, 0, 0.3));filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#DDFFFFFF, endColorstr=#00FFFFFF);
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#DDFFFFFF, endColorstr=#00FFFFFF)";
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+} 
+
+
+/* =Responsive Structure
+----------------------------------------------- */
+
+@media (max-width: 800px) {
+#header{
+	width:100%;
+	height:120px;
+	border-bottom:2px solid #ddd;
+	border-right:none;
+	margin: 0 0 15px 6px
+}
+
+#header .logo{
+	width:190px;
+	display:inline-block;
+}
+
+#payoff{
+	display: inline-block;
+	margin-left:8px;
+	position:relative;
+	bottom:34px;
+	color:#333;
+}
+}
+
+@media (max-width: 650px) {
+.flightPanel1, .flightPanel2, .flightPanel3{width:90%}
+#hotelPanel table {
+width: 45%;}
+

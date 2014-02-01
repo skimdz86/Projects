@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/config/application-env.properties"/>
+        <!-- oppure dal classpath, cosi <property name="location" value="classpath:jdbc.properties"/> -->
+    </bean>
+    
+<!--     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="crevu_ds"
+        p:driverClassName="${jdbc.driverClass}" p:password="${jdbc.password}" p:url="${jdbc.url}"
+        p:username="${jdbc.username}"> </bean>
+   -->
+   
+   
+   <bean class="org.springframework.jndi.JndiObjectFactoryBean" id="crevu_ds">
+   		<property name="jndiName" value="java:jboss/datasources/crevu_ds"/>
+   </bean>
+   
+<!-- serve?? ->forse rimpiazzare qquello sotto che è solo jpa -->
+<!-- 	<bean class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" -->
+
+	<bean class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" id="crevuSessionFactory"
+		name="crevuSessionFactory">
+        <!--  p:dataSource-ref="crevu_ds"> -->
+<!--         <property name="annotatedClasses"> -->
+		<property name="mappingResources">
+            <list>
+<!--                 <value>it.crevu.db.WelcomeUser</value> -->
+                <value>it/crevu/db/WelcomeUser.hbm.xml</value>
+            </list>
+        </property>  
+        <property name="hibernateProperties">
+            <props>
+               <prop key="hibernate.connection.datasource">java:jboss/datasources/crevu_ds</prop>
+	           <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+<!-- 	           <prop key="hibernate.transaction.manager_lookup_class">org.hibernate.transaction.JBossTransactionManagerLookup</prop> -->
+	           <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+	           <prop key="hibernate.show_sql">${jdbc.showSql}</prop>
+	           <prop key="hibernate.hbm2ddl.auto">update</prop>
+<!-- 	           <prop key="hibernate.session_factory_name">jndi/crevuSessionFactory</prop> -->
+	        </props>
+        </property>
+        <property name="dataSource"><ref bean="crevu_ds"></ref></property>
+	</bean>
+    <!-- 
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	    <property name="persistenceUnitName" value="crevu-persistence"/>
+	    <property name="dataSource" ref="crevu_ds"/>
+	    <property name="jpaVendorAdapter">
+	        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+	            <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
+	            <property name="showSql" value="${jdbc.showSql}"/>
+	            <property name="generateDdl" value="false"/>
+	        </bean>
+	    </property>
+	    <property name="jpaProperties">  
+		    <value>   
+		     hibernate.cache.provider_class=net.sf.ehcache.hibernate.SingletonEhCacheProvider  
+		     hibernate.cache.use_query_cache=true  
+		     hibernate.cache.use_second_level_cache=false  
+		    </value>
+		 </property> 
+    </bean>
+     -->
+    
+    <!-- 
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean> -->
+    <!-- --> <bean class="org.springframework.orm.hibernate3.HibernateTransactionManager"
+        id="transactionManager" p:sessionFactory-ref="crevuSessionFactory"/>  
+    
+    <!-- Activates annotation-based bean configuration -->
+	<context:annotation-config/>
+	<!-- needed is for @Configurable -->
+	<context:component-scan base-package="it.crevu.db"
+		annotation-config="true" />
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+     
+    <!-- 
+    <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mailHost}" />
+        <property name="port" value="465" />
+        <property name="username" value="${mailUsername}"/>
+        <property name="password" value="${mailPassword}"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.debug">${mailDebug}</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+                <prop key="mail.smtp.socketFactory.fallback">false</prop>
+                <prop key="mail.smtp.socketFactory.port">465</prop>
+                <prop key="mail.from">${mailFrom}</prop>
+            </props>
+        </property>
+    </bean>
+	 -->
+	 
+	<!-- Beans di Crevu-->
+	
+	<bean id="beanTest" class="it.crevu.spring.beans.BeanTest">
+		<property name="message" value="test"/>
+	</bean>
+	<bean id="WelcomeUserDAO" class="it.crevu.db.WelcomeUserHome">
+		<property name="SessionFactory" value="jndi/crevuSessionFactory"/>
+	</bean>
+	
+</beans>

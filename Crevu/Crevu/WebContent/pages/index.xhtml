@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="../WEB-INF/template/basePage.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="content">
+	    <!-- start: Header -->
+        <div class="container-fluid">
+
+            <!-- start: Content -->
+            <div id="content" class="span11" style="height: 100%;">
+                <div style="float:left;"><img src="/Crevu/resources/images/t-shirt.png" class="img_home" /></div>
+                <div style="float:right;"><img src="/Crevu/resources/images/t-shirt1.png" class="img_home" /></div>
+                <ul class="ch-grid" style="margin-top:5%;margin-bottom: 5%;">
+                    <li>
+                        <div class="box-3 events_title" onclick="changePage('events.html');">
+                            <h2 id="events_title">Events</h2>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box-3 showcase_title" onclick="changePage('showcase.html');">
+                            <h2 id="showcase_title">Liveline</h2>
+                        </div>
+                    </li>
+                    <li>
+                    <h:outputLink value="#{bundleLink['tshirtCreationPage']}">
+                        <div class="box-3 create_title">
+                            <h2 id="create_title">Creation Lab</h2>
+                        </div>
+                     </h:outputLink>
+                    </li>
+                </ul>
+
+                <ul class="ch-grid" style="margin-top:5%;margin-bottom: 5%;">
+                    <li>
+                        <div class="ch-item ch-img-4">
+                            <div class="ch-info">
+                                <h2>What</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ch-item ch-img-2">
+                            <div class="ch-info">
+                                <h2>How</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ch-item ch-img-5">
+                            <div class="ch-info">
+                                <h2>Why</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ch-item ch-img-3">
+                            <div class="ch-info">
+                                <h2>Where</h2>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="ch-item ch-img-1">
+                            <div class="ch-info">
+                                <h2>Who</h2>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>   
+
+        </div><!--/fluid-row-->
+	   
+	</ui:define>
+	
+	<ui:define name="scripts">
+		<script type="text/javascript" src="/Crevu/resources/js/backstretch.js"></script>
+        
+		<script type="text/javascript">
+            //bg img
+            $(document).ready(function() { 
+                $.backstretch("/Crevu/resources/images/bg.jpg"); 
+                $(".events_title").rotate('-30deg');
+                $(".create_title").rotate('30deg');
+                $("#events_title").arctext({radius:200});
+                $("#showcase_title").arctext({radius:200});
+                $("#create_title").arctext({radius:360});
+            }); 
+            
+        </script>
+	</ui:define>
+	
+</ui:composition>

@@ -1,0 +1,12 @@
+drop index idx_basket_item_user on basket_item;
+drop index idx_revenue_user on revenue;
+drop index idx_transaction_order on transaction;
+drop index idx_supplier_order_order on supplier_order;
+drop index idx_payment_deal on payment;
+drop index idx_ordered_tshirt_deal on ordered_tshirt;
+drop index idx_sold_tshirt_user on sold_tshirt;
+drop index idx_tshirt_proposal_user on tshirt_proposal;
+drop index idx_text_wish_user on text_wish;
+drop index idx_address_user on address;
+drop index idx_social_account_user on social_account;
+drop index idx_notification_user on notification;
