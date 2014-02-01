@@ -1,0 +1,8 @@
+module Data{
+  typedef sequence<any> dList;
+
+  interface DataList{
+    void insertData(in any a);
+    dList returnList();
+  }; 
+}; 
