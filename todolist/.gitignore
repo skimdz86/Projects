@@ -1,0 +1,6 @@
+credentials.txt
+
+startMongo.bat
+
+target/
+.openshift/
